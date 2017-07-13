@@ -1,4 +1,3 @@
-console.log('this is loaded');
 
 exports.twitterKeys = {
   consumer_key: 'U1p7cyWUl4Ms0WZH21WM5ttdT',
@@ -9,14 +8,15 @@ exports.twitterKeys = {
 
 
 
-
-
-spotifyKeys =
+exports.spotifyKeys = {
 
 client_id: '2a11de8bb7c64966a7147fe166f2c361',
 
 client_secret: 'de7465a29cf748e4acf5ed8014d92d4f',
 
+}
 
 
-
+exports.omdbKeys = {
+	apikey: '40e9cece'
+}
