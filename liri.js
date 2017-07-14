@@ -1,11 +1,7 @@
 //my-tweets
-
 //spotify-this-song
-
 //movie-this
-
 //do-what-it-says
-
 
 // packages required to run app
 var liriKeys = require("./keys.js");
@@ -27,7 +23,6 @@ var client = new Twitter({
     access_token_secret: liriKeys.twitterKeys.access_token_secret
 });
 
-
 // function to grab song
 function getMeSong(trackName) {
 
@@ -43,7 +38,6 @@ function getMeSong(trackName) {
 
         writeToLog("Spotify search results: ");
 
-
 		var songs = data.tracks.items[0];
 		songs.album.artists.forEach(function(artist, index) {
 			writeToLog("Artist(s): \n" + (index + 1) + artist.name);
@@ -54,7 +48,6 @@ function getMeSong(trackName) {
         console.log("Preview Here: " + data.tracks.items[0].preview_url);
 
     })
-
 };
         
 	// function to grab tweets from mitumchakrabati account	
@@ -81,7 +74,6 @@ function getTweets() {
         };
     });
 }; //end getTweets;
-
 
 // function to grab movie
 
@@ -168,17 +160,4 @@ var runThis = function(argOne, argTwo) {
 };
 
 runThis(process.argv[2], process.argv[3]);
-
-		
-
-
-
-
-
-
-
-
-
-
-
 
