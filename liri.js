@@ -6,27 +6,11 @@
 
 //do-what-it-says
 
-
 var liriKeys = require("./keys.js");
 var Twitter = require("twitter");
 var Spotify = require("node-spotify-api");
 var request = require('request');
 var fs = require('fs');
-
-
-
-function writeToLog (data) {
-  fs.appendFile("log.txt", '\n', {
-
-  	'flag': 'a'
-  }, function(err) {
-  		if (err) {
-  			return console.error(err);
-  	}
-    
-  });
-  	console.log(data);
-}
 
 
 var spotify = new Spotify({
@@ -62,7 +46,7 @@ function getMeSong(trackName) {
         console.log("Artist Name: " + data.tracks.items[0].artists[0].name);
 		    console.log("Album Name: " + data.tracks.items[0].album.name);
         console.log("Song Name: " + data.tracks.items[0].name);
-        console.log("Preview URL: " + data.tracks.items[0].preview_url);
+        console.log("Preview Here: " + data.tracks.items[0].preview_url);
 
     })
 
@@ -70,22 +54,28 @@ function getMeSong(trackName) {
         
 		
 		
-function getMeTweets() {
-			client.get('search/tweets', { 
-        screen_name: 'mitumchakrabati', 
-			count: 20 
-		}, function(error, tweets, response) {
+function getTweets() {
+			  console.log("My tweets!");
+    //new variable for instance of twitter, load keys from imported keys.js
+        
 
-    		console.log("My Tweets!");
-    		tweets.statuses.forEach(function(tweet, index) {
-    			console.log((index + 1) + ") " + tweet.txt);
-    		
-  			});
+    //parameters for twitter function.
+    var parameters = {
+        screen_name: 'mitumchakrabati',
+        count: 20
+    };
 
-    		logWriter("Ending Tweets!");
-
-	});
-}
+    //call the get method on our client variable twitter instance
+    client.get('statuses/user_timeline', parameters, function(error, tweets, response) {
+        if (!error) {
+            for (i = 0; i < tweets.length; i++) {
+                var returnedData = ('Number: ' + (i + 1) + '\n' + tweets[i].created_at + '\n' + tweets[i].text + '\n');
+                console.log(returnedData);
+                console.log("-------------------------");
+            }
+        };
+    });
+}; //end getTweets;
 
 function getMeMovie (data) {
 
@@ -135,7 +125,7 @@ function getMeMovie (data) {
 var pick = function(caseData, functionData) {
   switch (caseData) {
     case 'my-tweets':
-      getMeTweets();
+      getTweets();
       break;
     case 'spotify-this-song':
       getMeSong(functionData);
@@ -149,6 +139,20 @@ var pick = function(caseData, functionData) {
     default:
       console.log('LIRI didn\'t get that');
   }
+}
+
+
+function writeToLog (data) {
+  fs.appendFile("log.txt", '\n', {
+
+    'flag': 'a'
+  }, function(err) {
+      if (err) {
+        return console.error(err);
+    }
+    
+  });
+    console.log(data);
 }
 
 
