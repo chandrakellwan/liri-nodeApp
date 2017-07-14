@@ -6,13 +6,15 @@
 
 //do-what-it-says
 
+
+// packages required to run app
 var liriKeys = require("./keys.js");
 var Twitter = require("twitter");
 var Spotify = require("node-spotify-api");
 var request = require('request');
 var fs = require('fs');
 
-
+// variable for keys
 var spotify = new Spotify({
     id: liriKeys.spotifyKeys.client_id,
     secret: liriKeys.spotifyKeys.client_secret
@@ -25,7 +27,11 @@ var client = new Twitter({
     access_token_secret: liriKeys.twitterKeys.access_token_secret
 });
 
+
+// function to grab song
 function getMeSong(trackName) {
+
+  //launch Spotify search
     spotify.search({
         type: 'track',
         query: trackName,
@@ -34,7 +40,6 @@ function getMeSong(trackName) {
         if (err) {
             return console.log('Error occurred: ' + err);
         }
-
 
         writeToLog("Spotify search results: ");
 
@@ -52,7 +57,7 @@ function getMeSong(trackName) {
 
 };
         
-		
+	// function to grab tweets from mitumchakrabati account	
 		
 function getTweets() {
 			  console.log("My tweets!");
@@ -77,6 +82,9 @@ function getTweets() {
     });
 }; //end getTweets;
 
+
+// function to grab movie
+
 function getMeMovie (data) {
 
   request ("http://www.omdbapi.com/?t=" + data + '&apikey=40e9cece&tomatoes=true', function(error, response, body) {
@@ -85,8 +93,6 @@ function getMeMovie (data) {
             console.log('error:', error);
         } else {
             var jsonData = JSON.parse(body);
-
-  
 
       var movieObject= {
       'Title: ' : jsonData.Title,
@@ -107,6 +113,8 @@ function getMeMovie (data) {
 
 }
 
+// function to do what is in random.txt file
+
  function doWhatItSays(data) {
   fs.readFile("random.txt", "utf8", function(error, data) {
     console.log(data);
@@ -121,7 +129,7 @@ function getMeMovie (data) {
 
   });
 }
-
+// switch statement to declare what action to execute 
 var pick = function(caseData, functionData) {
   switch (caseData) {
     case 'my-tweets':
@@ -141,7 +149,6 @@ var pick = function(caseData, functionData) {
   }
 }
 
-
 function writeToLog (data) {
   fs.appendFile("log.txt", '\n', {
 
@@ -155,7 +162,7 @@ function writeToLog (data) {
     console.log(data);
 }
 
-
+// user input
 var runThis = function(argOne, argTwo) {
   pick(argOne, argTwo);
 };
