@@ -8,8 +8,8 @@
 
 
 var liriKeys = require("./keys.js");
-var twitter = require("twitter");
-var spotify = require("node-spotify-api");
+var Twitter = require("twitter");
+var Spotify = require("node-spotify-api");
 var request = require('request');
 var fs = require('fs');
 
@@ -30,15 +30,15 @@ function writeToLog (data) {
 
 
 var spotify = new Spotify({
-    id: keys.spotifyKeys.client_id,
-    secret: keys.spotifyKeys.client_secret
+    id: liriKeys.spotifyKeys.client_id,
+    secret: liriKeys.spotifyKeys.client_secret
 });
 
 var client = new Twitter({
-    consumer_key: keys.twitterKeys.consumer_key,
-    consumer_secret: keys.twitterKeys.consumer_secret,
-    access_token_key: keys.twitterKeys.access_token_key,
-    access_token_secret: keys.twitterKeys.access_token_secret
+    consumer_key: liriKeys.twitterKeys.consumer_key,
+    consumer_secret: liriKeys.twitterKeys.consumer_secret,
+    access_token_key: liriKeys.twitterKeys.access_token_key,
+    access_token_secret: liriKeys.twitterKeys.access_token_secret
 });
 
 function getMeSong(trackName) {
@@ -57,12 +57,12 @@ function getMeSong(trackName) {
 
 		var songs = data.tracks.items[0];
 		songs.album.artists.forEach(function(artist, index) {
-			writeToLog("Artist(s): \n" + (index + 1") " + artist.name);
+			writeToLog("Artist(s): \n" + (index + 1) + artist.name);
 		})
-
-		logWriter("Album Name: " + songReturned.album.name);
-        logWriter("Song Name: " + songReturned.name);
-        logWriter("Preview URL: " + songReturned.preview_url);
+        console.log("Artist Name: " + data.tracks.items[0].artists[0].name);
+		    console.log("Album Name: " + data.tracks.items[0].album.name);
+        console.log("Song Name: " + data.tracks.items[0].name);
+        console.log("Preview URL: " + data.tracks.items[0].preview_url);
 
     })
 
@@ -71,17 +71,16 @@ function getMeSong(trackName) {
 		
 		
 function getMeTweets() {
-			client.get('search/tweets', {
-
-			q: { 'mitum', 
+			client.get('search/tweets', { 
+        screen_name: 'mitumchakrabati', 
 			count: 20 
 		}, function(error, tweets, response) {
 
-    		writeToLog("My Tweets!");
-    		tweets.statuses.forEach(function(tweet, index)_{
-    			writeToLog((index + 1) + ") " + tweet.txt);
+    		console.log("My Tweets!");
+    		tweets.statuses.forEach(function(tweet, index) {
+    			console.log((index + 1) + ") " + tweet.txt);
     		
-  			})
+  			});
 
     		logWriter("Ending Tweets!");
 
@@ -95,11 +94,11 @@ function getMeMovie (data) {
         if (error) {
             console.log('error:', error);
         } else {
-            var movieObject = JSON.parse(body);
+            var jsonData = JSON.parse(body);
 
   
 
-      data.push({
+      var movieObject= {
       'Title: ' : jsonData.Title,
       'Year: ' : jsonData.Year,
       'Rated: ' : jsonData.Rated,
@@ -110,9 +109,9 @@ function getMeMovie (data) {
       'Actors: ' : jsonData.Actors,
       'Rotten Tomatoes Rating: ' : jsonData.tomatoRating,
       'Rotton Tomatoes URL: ' : jsonData.tomatoURL,
-  });
-      console.log(data);
-      writeToLog(data);
+  };
+      console.log(movieObject);
+      writeToLog(movieObject);
 }
   });
 
