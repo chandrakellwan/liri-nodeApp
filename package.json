@@ -1,5 +1,5 @@
 {
-  "name": "LIRI bot node app",
+  "name": "liri-nodeApp",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chandrakellwan/LIRI-bot_nodeApp.git"
+    "url": "git+https://github.com/chandrakellwan/liri-nodeApp.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/chandrakellwan/liri-nodeApp/issues"
   },
-  "homepage": "https://github.com/chandrakellwan/liri-nodeApp#readme",
+  "homepage": "https://github.com/chandrakellwan/LIRIbot-nodeApp#readme",
   "dependencies": {
     "node-spotify-api": "^1.0.5",
     "request": "^2.81.0",
