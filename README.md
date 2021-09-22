@@ -3,11 +3,16 @@ LIRI Bot (Language Interpretation and Recognition Interface) is a command line i
 
 <strong>Technologies Used</strong>
 
-LIRI Bot is built using javascript and runs in the node.js engine. Its dependencies are as follows
+LIRI Bot is built using javascript and runs in the node.js engine. Its dependencies are as follows:
+
 	•	npm package 'env' for handling the API keys as environment variables.
+	
 	•	npm package 'fs' for file system operations. Needed for reading and writing the random.txt and log.txt files.
+	
 	•	npm pakcage 'axiom' for http GET calls to the API's.
+	
 	•	npm package 'node-spotify-api' for accessing the Spotify service's APIs.
+	
 	•	npm package 'moment.js' for handling and formatting Date() objects.
 
 <strong>LIRI Bot command line commands</strong>
