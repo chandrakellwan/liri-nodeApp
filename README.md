@@ -27,7 +27,7 @@ Running this command will show information about the song name entered: the arti
 	
 node liri.js movie-this [movie name]
 	
-Entering the command along with a movie name will output the following information
+Entering the command along with a movie name will output the following information:
 
 	•	Title of the movie.
 	
