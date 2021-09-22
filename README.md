@@ -33,9 +33,9 @@ Entering the command along with a movie name will output the following informati
 	
 	•	Year the movie came out.
 	
-	•	IMDB Rating of the movie.
+	•	IMDB rating of the movie.
 	
-	•	Rotten Tomatoes Rating of the movie.
+	•	Rotten Tomatoes rating of the movie.
 	
 	•	Country where the movie was produced.
 	
