@@ -26,23 +26,4 @@ Entering the command along with a movie name will output the following informati
 
 If no movie parameter is passed, LIRI Bot will print out the details of movie Mr. Nobody (by default). 
 node liri.js do-what-it-says 
-This will make LIRI Bot run the commands already saved in file 'random.txt' in the current working directory. For example, if the contents of the file are :
-$ cat random.txt
-spotify-this-song,"I Want it That Way"
-spotify-this-song,"Hey Jude"
-
-Running the command above will return:
-$ node liri.js do-what-it-says
------------------------------------------------------------
-Artist Name: Backstreet Boys
-Song Name  : I Want It That Way
-Preview URL: https://p.scdn.co/mp3-preview/e72a05dc3f69c891e3
-
-Album  Name: The Hits--Chapter One
------------------------------------------------------------
------------------------------------------------------------
-Artist Name: The Beatles
-Song Name  : Hey Jude - Remastered 2015
-Preview URL: Not Available
-Album  Name: 1 (Remastered)
------------------------------------------------------------
+This will make LIRI Bot run the commands already saved in file 'random.txt' in the current working directory.
