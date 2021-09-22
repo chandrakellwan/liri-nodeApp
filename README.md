@@ -13,10 +13,15 @@ LIRI Bot is built using javascript and runs in the node.js engine. Its dependenc
 <strong>LIRI Bot command line commands:</strong>
 
 node liri.js concert-this [<artist name>]
+	
 The command above will search the Bands in Town Artist Events API for the artist name entered and render the name and location of the venue and the date of future events and concerts by that artist.
+	
 node liri.js spotify-this-song [<song name>]
+	
 Running this command will show information about the song name entered: the artist(s), a preview link of the song from Spotify and the album name. If no parameter for a song is passed in, LIRI Bot will respond with information about the song "The Sign" by Ace of Base (by default). 
+	
 node liri.js movie-this [<movie name>]
+	
 Entering the command along with a movie name will output the following information :
 	•	Title of the movie.
 	•	Year the movie came out.
@@ -28,5 +33,7 @@ Entering the command along with a movie name will output the following informati
 	•	Actors in the movie.
 
 If no movie parameter is passed, LIRI Bot will print out the details of movie Mr. Nobody (by default). 
+	
 node liri.js do-what-it-says 
+	
 This will make LIRI Bot run the commands already saved in file 'random.txt' in the current working directory.
