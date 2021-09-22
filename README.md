@@ -28,13 +28,20 @@ Running this command will show information about the song name entered: the arti
 node liri.js movie-this [movie name]
 	
 Entering the command along with a movie name will output the following information
+
 	•	Title of the movie.
+	
 	•	Year the movie came out.
+	
 	•	IMDB Rating of the movie.
+	
 	•	Rotten Tomatoes Rating of the movie.
+	
 	•	Country where the movie was produced.
 	•	Language of the movie.
+	
 	•	Plot of the movie.
+	
 	•	Actors in the movie.
 
 If no movie parameter is passed, LIRI Bot will print out the details of movie Mr. Nobody (by default). 
