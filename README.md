@@ -15,7 +15,7 @@ LIRI Bot is built using javascript and runs in the node.js engine. Its dependenc
 	
 	•	npm package 'moment.js' for handling and formatting Date() objects.
 
-<strong>LIRI Bot command line commands</strong>
+<strong>LIRI Bot commands</strong>
 
 node liri.js concert-this [artist name]
 	
@@ -38,6 +38,7 @@ Entering the command along with a movie name will output the following informati
 	•	Rotten Tomatoes Rating of the movie.
 	
 	•	Country where the movie was produced.
+	
 	•	Language of the movie.
 	
 	•	Plot of the movie.
