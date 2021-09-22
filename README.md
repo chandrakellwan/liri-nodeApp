@@ -1,13 +1,13 @@
 # LIRI Bot Node App
 LIRI Bot (Language Interpretation and Recognition Interface) is a command line interpreter that takes in parameters and returns results from the Spotify music service API, the Open Movie Database API and the Bands In Town service API. LIRI Bot solves the problem of searching for information from a command line setup or in computer systems without a GUI (graphical user interface) browser.
+
 <strong>Technologies Used</strong>
-LIRI is built using javascript and runs in the node.js engine. Its dependencies are as follows:
+LIRI Bot is built using javascript and runs in the node.js engine. Its dependencies are as follows:
 	•	npm package 'env' for handling the API keys as environment variables.
 	•	npm package 'fs' for file system operations. Needed for reading and writing the random.txt and log.txt files.
 	•	npm pakcage 'axiom' for http GET calls to the API's.
 	•	npm package 'node-spotify-api' for accessing the Spotify service's APIs.
 	•	npm package 'moment.js' for handling and formatting Date() objects.
-	•	
 
 <strong>LIRI Bot command line commands:</strong>
 node liri.js concert-this [<artist name>]
