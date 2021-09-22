@@ -9,7 +9,7 @@ LIRI Bot is built using javascript and runs in the node.js engine. Its dependenc
 	
 	•	npm package 'fs' for file system operations. Needed for reading and writing the random.txt and log.txt files.
 	
-	•	npm pakcage 'axiom' for http GET calls to the API's.
+	•	npm package 'axiom' for http GET calls to the API's.
 	
 	•	npm package 'node-spotify-api' for accessing the Spotify service's APIs.
 	
